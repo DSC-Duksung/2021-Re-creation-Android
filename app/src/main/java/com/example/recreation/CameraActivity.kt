@@ -6,6 +6,7 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.recreation.model.ImageClassifier
@@ -28,25 +29,46 @@ class CameraActivity:AppCompatActivity() {
         val MY_CAMERA_REQUEST_CODE = 7171
     }
     var imageUri: Uri? = null
+    var count:Int? = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
-        //var btn_camera = findViewById(R.id.btn_camera) as ImageView
-        /* btn_check.setOnClickListener {
-             val intent = Intent(this, CheckActivity::class.java)
-             intent.putExtra("url",imageUri.toString())
-             startActivity(intent)
-             finish()
-             //startActivityForResult(intent,0)
-         }*/
+
+        back_button.visibility = View.INVISIBLE
+
         btn_back.setOnClickListener {
-            // val intent = Intent()
-            //intent.putExtra("camera_uri",imageUri.toString())
-            //intent.putExtra("img",bitmap)
-            // setResult(Activity.RESULT_OK,intent)
-            // startActivityForResult(intent,100)
             finish()
+        }
+
+
+        yes_button.setOnClickListener {
+            back_button.visibility = View.VISIBLE
+            resultText.setText("Question")
+
+            count = count?.plus(1)
+            when (count) {
+                1 -> qnaText.setText("1번: print 1")
+                2 -> qnaText.setText("2번: print 2")
+                3 -> qnaText.setText("3번: print 3")
+                4 -> {
+                    // 물 뿌리는 화면으로 전환
+                    val intent = Intent(this,WateringActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+
+
+        }
+
+
+        back_button.setOnClickListener {
+            count = count?.minus(1)
+            when(count){
+                2 -> qnaText.setText("2번 : print 2")
+                3 -> qnaText.setText("3번 : print 3")
+                else -> qnaText.setText("1번 : print 1")
+            }
         }
 
         //Event

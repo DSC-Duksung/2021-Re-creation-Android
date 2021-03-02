@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_camera.*
 
 class CameraFragment : Fragment() {
 
@@ -23,10 +24,18 @@ class CameraFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        activity?.let {
-            val iT = Intent(context, CameraActivity::class.java)
-            //startActivity(iT)
-            startActivityForResult(iT, 100)
+        camera_icon.setOnClickListener {
+            activity?.let{
+                val intent = Intent(activity,CameraActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        photo_icon.setOnClickListener {
+            activity?.let{
+                val intent = Intent(activity,PhotoActivity::class.java)
+                startActivity(intent)
+            }
         }
 
     }
