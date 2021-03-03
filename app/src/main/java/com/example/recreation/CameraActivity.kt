@@ -123,7 +123,7 @@ class CameraActivity:AppCompatActivity() {
                     // classifier 결과
                     classifier.recognizeImage(bitmap).subscribeBy(
                         onSuccess = {
-                            resultText.text = it.toString().first().toString()
+                            resultText.text = it.toString()
                         }, onError = {
                             resultText.text = "Error"
                         }
