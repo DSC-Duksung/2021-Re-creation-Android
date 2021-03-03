@@ -7,13 +7,49 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
+    <TextView
+        android:id="@+id/level"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Level.1"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/nickname"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Nickname"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toEndOf="@+id/level"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        tools:ignore="MissingConstraints" />
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="408dp"
-        android:layout_height="408dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:src="@drawable/logo_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/shortText"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Have a good day!"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
