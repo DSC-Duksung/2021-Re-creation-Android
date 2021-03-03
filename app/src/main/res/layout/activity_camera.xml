@@ -6,54 +6,63 @@
 
     <ImageView
         android:id="@+id/btn_back"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/ic_baseline_chevron_left_24" />
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textColor="@color/main_green"
+        android:textSize="20dp"
+        android:layout_toRightOf="@+id/btn_back"
+        android:layout_marginTop="6dp"/>
 
     <ImageView
         android:id="@+id/img_preview1"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="250dp"
         android:layout_below="@+id/btn_back"
         android:layout_marginTop="28dp" />
-
-    <ImageView
-        android:id="@+id/img_icon"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_below="@id/img_preview1"
-        android:src="@drawable/logo_color" />
-
     <TextView
         android:id="@+id/resultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/img_preview1"
-        android:layout_alignLeft="@id/img_icon"
-        android:layout_marginLeft="56dp"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
         android:text="결과"
         android:textSize="30dp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_below="@id/img_icon"
+        android:layout_below="@id/resultText"
         android:id="@+id/qnaText"
         android:padding="20dp"
-        android:textSize="20dp"/>
-
+        android:textSize="20dp" />
     <Button
         android:id="@+id/yes_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:background="#A62EBE3D"
         android:layout_below="@id/qnaText"
-        android:text="NEXT" />
+        android:layout_marginRight="15dp"
+        android:text="NEXT"
+        android:textColor="@color/white"
+        android:drawableRight="@drawable/ic_baseline_arrow_right_alt_24"
+        android:padding="10dp" />
 
     <Button
+        android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/back_button"
+        android:background="#A62EBE3D"
         android:layout_below="@id/qnaText"
-        android:text="BACK"/>
+        android:layout_marginLeft="15dp"
+        android:text="BACK"
+        android:textColor="@color/white"
+        android:drawableLeft="@drawable/ic_baseline_keyboard_backspace_24"
+        android:padding="10dp" />
 </RelativeLayout>

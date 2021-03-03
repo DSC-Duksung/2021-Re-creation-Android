@@ -24,19 +24,18 @@ class CameraFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        camera_icon.setOnClickListener {
+        button_camera.setOnClickListener {
             activity?.let{
-                val intent = Intent(activity,CameraActivity::class.java)
+                val intent = Intent(activity, CameraActivity::class.java)
                 startActivity(intent)
             }
         }
 
-        photo_icon.setOnClickListener {
+        button_picture.setOnClickListener {
             activity?.let{
-                val intent = Intent(activity,PhotoActivity::class.java)
+                val intent = Intent(activity, PhotoActivity::class.java)
                 startActivity(intent)
             }
         }
-
     }
 }

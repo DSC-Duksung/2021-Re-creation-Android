@@ -44,7 +44,6 @@ class CameraActivity:AppCompatActivity() {
 
         yes_button.setOnClickListener {
             back_button.visibility = View.VISIBLE
-            resultText.setText("Question")
 
             count = count?.plus(1)
             when (count) {
@@ -124,7 +123,7 @@ class CameraActivity:AppCompatActivity() {
                     // classifier 결과
                     classifier.recognizeImage(bitmap).subscribeBy(
                         onSuccess = {
-                            resultText.text = it.toString()
+                            resultText.text = it.toString().first().toString()
                         }, onError = {
                             resultText.text = "Error"
                         }
