@@ -37,7 +37,6 @@ class PhotoActivity:AppCompatActivity() {
 
         yes_button.setOnClickListener {
             back_button.visibility = View.VISIBLE
-            resultText.setText("Question")
 
             count = count?.plus(1)
             when (count) {
