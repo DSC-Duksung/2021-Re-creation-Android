@@ -1,13 +1,14 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/ivory</item>
+        <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryDark">@color/black</item>
+        <item name="android:textColorPrimary">@color/main_green</item>
         <item name="colorAccent">@color/yellow</item>
         <!-- No Title Bar-->
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
     </style>
 </resources>
 
