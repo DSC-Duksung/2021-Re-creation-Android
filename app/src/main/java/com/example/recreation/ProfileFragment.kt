@@ -1,5 +1,6 @@
 package com.example.recreation
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -19,6 +20,11 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment : Fragment(), View.OnClickListener {
+    //google client
+    private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var firebaseAuth: FirebaseAuth
+    private val RC_SIGN_IN = 99
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
@@ -28,46 +34,40 @@ class ProfileFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        bnt_profile.setOnClickListener {
-            activity?.let {
-                val intent = Intent(activity, ProfileContents::class.java)
-                startActivity(intent)
+        login_button.setOnClickListener({signIn()}) // 구글 로그인 버튼
 
-            }
-        }
+//        bnt_profile.setOnClickListener {
+//            activity?.let {
+//                val intent = Intent(activity, ProfileContents::class.java)
+//                startActivity(intent)
+//            }
+//        }
     }
 
-
-    //google client
-    private lateinit var googleSignInClient: GoogleSignInClient
-    private lateinit var firebaseAuth: FirebaseAuth
-    private val RC_SIGN_IN = 99
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        //btn_googleSignIn.setOnClickListener (this) // 구글 로그인 버튼
-        btn_login
-            .setOnClickListener {signIn()}
-
-        //Google 로그인 옵션 구성. requestIdToken 및 Email 요청
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.firebase_web_client_id))
-            .requestEmail()
-            .build()
-
-        googleSignInClient = GoogleSignIn.getClient(this, gso)
-        firebaseAuth = Firebase.auth
-    }
-
-    // onStart. 유저가 앱에 이미 구글 로그인을 했는지 확인
+    // 유저가 앱에 이미 구글 로그인을 했는지 확인
     override fun onStart() {
         super.onStart()
         val currentUser = firebaseAuth.currentUser
+    }
 
-    } //onStart End
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
 
-    // onActivityResult
+        //Google 로그인 옵션 구성. requestIdToken 및 Email 요청
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(BuildConfig.GOOGLE_SOCIAL_LOGIN_TOKEN)
+                .requestEmail()
+                .build()
+
+        googleSignInClient = GoogleSignIn.getClient(context, gso)
+        firebaseAuth = Firebase.auth
+    }
+
+    private fun signIn() {
+        val signInIntent = googleSignInClient.signInIntent
+        startActivityForResult(signInIntent, RC_SIGN_IN)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -84,9 +84,8 @@ class ProfileFragment : Fragment(), View.OnClickListener {
                 Log.w("LoginActivity", "Google sign in failed", e)
             }
         }
-    } // onActivityResult End
+    }
 
-    // firebaseAuthWithGoogle
     private fun firebaseAuthWithGoogle(idToken: String) {
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         firebaseAuth.signInWithCredential(credential)
@@ -97,25 +96,9 @@ class ProfileFragment : Fragment(), View.OnClickListener {
                     Log.w("LoginActivity", "firebaseAuthWithGoogle 실패", task.exception)
                 }
             }
-    }// firebaseAuthWithGoogle END
-
-
-    // toMainActivity
-    fun toMainActivity(user: FirebaseUser?) {
-        if(user !=null) { // MainActivity 로 이동
-            val intent = Intent(activity, MainActivity::class.java)
-            startActivity(intent)
-        }
-    } // toMainActivity End
-
-    // signIn
-    private fun signIn() {
-        val signInIntent = googleSignInClient.signInIntent
-        startActivityForResult(signInIntent, RC_SIGN_IN)
-    }
-    // signIn End
-
-    override fun onClick(p0: View?) {
     }
 
+    override fun onClick(v: View?) {
+        TODO("Not yet implemented")
+    }
 }
