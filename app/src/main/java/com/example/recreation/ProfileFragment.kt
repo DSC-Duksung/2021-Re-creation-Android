@@ -48,6 +48,11 @@ class ProfileFragment : Fragment(), View.OnClickListener {
     override fun onStart() {
         super.onStart()
         val currentUser = firebaseAuth.currentUser
+        if ( currentUser != null ) { // 로그인 했다면
+            nickname.setText(currentUser.email)
+            email.setText(currentUser.email)
+            login_button.setText("LOGOUT")
+        }
     }
 
     override fun onAttach(context: Context) {
@@ -55,9 +60,9 @@ class ProfileFragment : Fragment(), View.OnClickListener {
 
         //Google 로그인 옵션 구성. requestIdToken 및 Email 요청
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(BuildConfig.GOOGLE_SOCIAL_LOGIN_TOKEN)
-                .requestEmail()
-                .build()
+            .requestIdToken(BuildConfig.GOOGLE_SOCIAL_LOGIN_TOKEN)
+            .requestEmail()
+            .build()
 
         googleSignInClient = GoogleSignIn.getClient(context, gso)
         firebaseAuth = Firebase.auth
@@ -92,6 +97,10 @@ class ProfileFragment : Fragment(), View.OnClickListener {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Log.d("LoginActivity", "firebaseAuthWithGoogle 성공")
+                    val user = firebaseAuth.currentUser
+                    nickname.text = user.email
+                    email.text = user.email
+                    login_button.text = "LOGOUT"
                 } else {
                     Log.w("LoginActivity", "firebaseAuthWithGoogle 실패", task.exception)
                 }
