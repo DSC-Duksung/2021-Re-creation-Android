@@ -6,23 +6,24 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.View
-import android.widget.Gallery
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.recreation.model.ImageClassifier
 import com.example.recreation.model.Keys
 import io.reactivex.rxjava3.kotlin.subscribeBy
 import kotlinx.android.synthetic.main.activity_camera.*
+import kotlinx.android.synthetic.main.activity_camera.back_button
+import kotlinx.android.synthetic.main.activity_camera.btn_back
+import kotlinx.android.synthetic.main.activity_camera.img_preview1
+import kotlinx.android.synthetic.main.activity_camera.qnaText
+import kotlinx.android.synthetic.main.activity_camera.resultText
 
 class PhotoActivity:AppCompatActivity() {
-
 
     private lateinit var classifier: ImageClassifier
     var count:Int? = 0
     private val GET_GALLERY_IMAGE = 200
     private val imageview: ImageView? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,14 +36,14 @@ class PhotoActivity:AppCompatActivity() {
 
         loadImage()
 
-        yes_button.setOnClickListener {
+        next_button.setOnClickListener {
             back_button.visibility = View.VISIBLE
 
             count = count?.plus(1)
             when (count) {
-                1 -> qnaText.setText("1번: print 1")
-                2 -> qnaText.setText("2번: print 2")
-                3 -> qnaText.setText("3번: print 3")
+                1 -> qnaText.text = "1번: print 1"
+                2 -> qnaText.text = "2번: print 2"
+                3 -> qnaText.text = "3번: print 3"
                 4 ->
                     /* watering can gif 넣을 때 사용.
                     {
@@ -64,29 +65,23 @@ class PhotoActivity:AppCompatActivity() {
                     startActivity(intent)
                 }
             }
-
-
         }
-
 
         back_button.setOnClickListener {
             count = count?.minus(1)
             when(count){
-                2 -> qnaText.setText("2번 : print 2")
-                3 -> qnaText.setText("3번 : print 3")
-                else -> qnaText.setText("1번 : print 1")
+                2 -> qnaText.text = "2번 : print 2"
+                3 -> qnaText.text = "3번 : print 3"
+                else -> qnaText.text = "1번 : print 1"
             }
         }
         classifier = ImageClassifier(getAssets()) // sy: assets의 tflite 연결
     }
 
     private fun loadImage(){
-
         val intent = Intent(Intent.ACTION_PICK)
         intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*")
         startActivityForResult(intent, GET_GALLERY_IMAGE)
-
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -99,16 +94,12 @@ class PhotoActivity:AppCompatActivity() {
             //classifier 결과
             classifier.recognizeImage(bitmap).subscribeBy(
                 onSuccess = {
-                    resultText.text = it.toString()
+                    var string: String = it.toString()
+                    resultText.text = string.split(",")[0].replace("[", "").trim()
                 }, onError = {
                     resultText.text = "Error"
                 }
             )
         }
     }
-
-
-
-
-
 }

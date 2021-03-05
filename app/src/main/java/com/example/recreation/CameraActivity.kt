@@ -41,32 +41,28 @@ class CameraActivity:AppCompatActivity() {
             finish()
         }
 
-
-        yes_button.setOnClickListener {
+        next_button.setOnClickListener {
             back_button.visibility = View.VISIBLE
 
             count = count?.plus(1)
             when (count) {
-                1 -> qnaText.setText("1번: print 1")
-                2 -> qnaText.setText("2번: print 2")
-                3 -> qnaText.setText("3번: print 3")
+                1 -> qnaText.text = "1번: print 1"
+                2 -> qnaText.text = "2번: print 2"
+                3 -> qnaText.text = "3번: print 3"
                 4 -> {
                     // 물 뿌리는 화면으로 전환
                     val intent = Intent(this,WateringActivity::class.java)
                     startActivity(intent)
                 }
             }
-
-
         }
-
 
         back_button.setOnClickListener {
             count = count?.minus(1)
             when(count){
-                2 -> qnaText.setText("2번 : print 2")
-                3 -> qnaText.setText("3번 : print 3")
-                else -> qnaText.setText("1번 : print 1")
+                2 -> qnaText.text = "2번 : print 2"
+                3 -> qnaText.text = "3번 : print 3"
+                else -> qnaText.text = "1번 : print 1"
             }
         }
 
@@ -123,7 +119,8 @@ class CameraActivity:AppCompatActivity() {
                     // classifier 결과
                     classifier.recognizeImage(bitmap).subscribeBy(
                         onSuccess = {
-                            resultText.text = it.toString()
+                            var string: String = it.toString()
+                            resultText.text = string.split(",")[0].replace("[", "").trim()
                         }, onError = {
                             resultText.text = "Error"
                         }
