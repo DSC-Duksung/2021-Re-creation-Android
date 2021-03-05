@@ -43,13 +43,13 @@
                 android:text="Level.1"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/textView3"
-                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintBottom_toTopOf="@+id/email"
+                app:layout_constraintEnd_toStartOf="@+id/nickname"
                 app:layout_constraintStart_toEndOf="@id/imageView4"
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -58,12 +58,12 @@
                 android:text="Nickname"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintBottom_toTopOf="@+id/email"
                 app:layout_constraintStart_toEndOf="@+id/textView"
                 tools:ignore="HardcodedText" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -87,7 +87,7 @@
                 android:textColor="@color/main_green"
                 app:layout_constraintBottom_toTopOf="@+id/cardView3"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView3" />
+                app:layout_constraintStart_toEndOf="@+id/email" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView3"
