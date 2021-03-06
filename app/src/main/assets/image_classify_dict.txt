@@ -1,2 +1,3 @@
-beer
-soju
+pet
+glass
+paper
