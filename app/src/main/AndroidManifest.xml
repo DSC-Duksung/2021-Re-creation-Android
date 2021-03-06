@@ -20,6 +20,8 @@
         <activity android:name=".CameraActivity"/>
         <activity android:name=".PhotoActivity"/>
         <activity android:name=".WateringActivity"/>
+        <activity android:name=".Post"/>
+        <activity android:name=".ProfileContents"/>
 
         <activity
             android:name=".SplashActivity"
