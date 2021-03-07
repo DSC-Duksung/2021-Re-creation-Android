@@ -100,7 +100,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
                 if (task.isSuccessful) {
                     Log.d("LoginActivity", "firebaseAuthWithGoogle 성공")
                     val user = firebaseAuth.currentUser
-                    nickname.text = user.email
+                    nickname.setText(user.email.split("@")[0])
                     email.text = user.email
                     context?.let { Glide.with(it).load(user.photoUrl).into(profileImage) }
                     login_button.text = "LOGOUT"
