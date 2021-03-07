@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -49,8 +50,9 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         super.onStart()
         val currentUser = firebaseAuth.currentUser
         if ( currentUser != null ) { // 로그인 했다면
-            nickname.setText(currentUser.email)
+            nickname.setText(currentUser.email.split("@")[0])
             email.setText(currentUser.email)
+            context?.let { Glide.with(it).load(currentUser.photoUrl).into(profileImage) }
             login_button.setText("LOGOUT")
         }
     }
@@ -100,6 +102,7 @@ class ProfileFragment : Fragment(), View.OnClickListener {
                     val user = firebaseAuth.currentUser
                     nickname.text = user.email
                     email.text = user.email
+                    context?.let { Glide.with(it).load(user.photoUrl).into(profileImage) }
                     login_button.text = "LOGOUT"
                 } else {
                     Log.w("LoginActivity", "firebaseAuthWithGoogle 실패", task.exception)

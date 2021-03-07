@@ -19,7 +19,7 @@
             android:layout_marginTop="12dp">
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/profileImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -45,7 +45,7 @@
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/email"
                 app:layout_constraintEnd_toStartOf="@+id/nickname"
-                app:layout_constraintStart_toEndOf="@id/imageView4"
+                app:layout_constraintStart_toEndOf="@id/profileImage"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -71,7 +71,7 @@
                 android:layout_marginBottom="24dp"
                 android:text="Re:creation@gmail.com"
                 app:layout_constraintBottom_toTopOf="@+id/cardView3"
-                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintStart_toEndOf="@+id/profileImage"
                 tools:ignore="HardcodedText" />
 
             <Button
