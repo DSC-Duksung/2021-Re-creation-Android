@@ -26,7 +26,7 @@
                 android:layout_height="300dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="100dp"
-                android:src="@drawable/paper1" />
+                android:src="@drawable/can1" />
 
             <TextView
                 android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
                 android:gravity="center"
                 android:layout_marginLeft="24dp"
                 android:fontFamily="@font/inkliquid"
-                android:text="Paper"
+                android:text="Can"
                 android:textColor="@color/black"
                 android:textSize="45dp"
                 android:textStyle="bold" />
@@ -44,8 +44,7 @@
                 android:layout_height="250dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="85dp"
-
-                android:src="@drawable/paper2" />
+                android:src="@drawable/can2" />
 
             <TextView
                 android:layout_width="362dp"
@@ -53,25 +52,7 @@
                 android:layout_marginLeft="24dp"
                 android:fontFamily="@font/inkliquid"
                 android:gravity="center"
-                android:text="Remove other material\nthat is different from papers\nsuch as tapes and springs."
-                android:textColor="@color/black"
-                android:textSize="30dp" />
-
-
-            <ImageView
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="85dp"
-                android:src="@drawable/paper3" />
-
-            <TextView
-                android:layout_width="362dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
-                android:gravity="center"
-                android:fontFamily="@font/inkliquid"
-                android:text="Remove foreign substances\nfrom the inside of\npaper packs and paper cups."
+                android:text="Empty the contents\nand remove foreign substances."
                 android:textColor="@color/black"
                 android:textSize="30dp" />
 
@@ -80,7 +61,7 @@
                 android:layout_height="250dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="85dp"
-                android:src="@drawable/paper4" />
+                android:src="@drawable/can3" />
 
             <TextView
                 android:layout_width="364dp"
@@ -90,7 +71,7 @@
                 android:layout_marginBottom="100dp"
                 android:fontFamily="@font/inkliquid"
                 android:gravity="center"
-                android:text="If there is no\npaper pack exclusive collection box,\ntie the paper packs and separate them\nfrom other paper."
+                android:text="Remove other material\nthat is different from cans\nsuch as plastic caps,\nand send them out."
                 android:textColor="@color/black"
                 android:textSize="30dp" />
         </LinearLayout>

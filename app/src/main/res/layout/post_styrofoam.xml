@@ -26,15 +26,16 @@
                 android:layout_height="300dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="100dp"
-                android:src="@drawable/paper1" />
+                android:src="@drawable/styrofoam1" />
 
             <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="362dp"
                 android:gravity="center"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="24dp"
                 android:fontFamily="@font/inkliquid"
-                android:text="Paper"
+                android:text="Styrofoam"
                 android:textColor="@color/black"
                 android:textSize="45dp"
                 android:textStyle="bold" />
@@ -44,8 +45,7 @@
                 android:layout_height="250dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="85dp"
-
-                android:src="@drawable/paper2" />
+                android:src="@drawable/styrofoam2" />
 
             <TextView
                 android:layout_width="362dp"
@@ -53,7 +53,7 @@
                 android:layout_marginLeft="24dp"
                 android:fontFamily="@font/inkliquid"
                 android:gravity="center"
-                android:text="Remove other material\nthat is different from papers\nsuch as tapes and springs."
+                android:text="Empty the contents\nand remove foreign substances."
                 android:textColor="@color/black"
                 android:textSize="30dp" />
 
@@ -63,7 +63,7 @@
                 android:layout_height="250dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="85dp"
-                android:src="@drawable/paper3" />
+                android:src="@drawable/styrofoam3" />
 
             <TextView
                 android:layout_width="362dp"
@@ -71,7 +71,7 @@
                 android:layout_marginLeft="24dp"
                 android:gravity="center"
                 android:fontFamily="@font/inkliquid"
-                android:text="Remove foreign substances\nfrom the inside of\npaper packs and paper cups."
+                android:text="Remove other material\nthat is different from styrofoam\nsuch as labels and accessories."
                 android:textColor="@color/black"
                 android:textSize="30dp" />
 
@@ -80,7 +80,7 @@
                 android:layout_height="250dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="85dp"
-                android:src="@drawable/paper4" />
+                android:src="@drawable/styrofoam4" />
 
             <TextView
                 android:layout_width="364dp"
@@ -90,7 +90,7 @@
                 android:layout_marginBottom="100dp"
                 android:fontFamily="@font/inkliquid"
                 android:gravity="center"
-                android:text="If there is no\npaper pack exclusive collection box,\ntie the paper packs and separate them\nfrom other paper."
+                android:text="Styrofoam packaging shall be returned\nto the place of purchase as possible."
                 android:textColor="@color/black"
                 android:textSize="30dp" />
         </LinearLayout>
