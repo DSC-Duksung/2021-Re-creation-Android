@@ -30,9 +30,9 @@
 
             <TextView
                 android:layout_height="wrap_content"
-                android:layout_width="362dp"
+                android:layout_width="wrap_content"
                 android:gravity="center"
-                android:layout_marginLeft="24dp"
+                android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/inkliquid"
                 android:text="Can"
                 android:textColor="@color/black"
@@ -47,9 +47,9 @@
                 android:src="@drawable/can2" />
 
             <TextView
-                android:layout_width="362dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
+                android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/inkliquid"
                 android:gravity="center"
                 android:text="Empty the contents\nand remove foreign substances."
@@ -64,10 +64,9 @@
                 android:src="@drawable/can3" />
 
             <TextView
-                android:layout_width="364dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="22dp"
-                android:layout_marginLeft="22dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="100dp"
                 android:fontFamily="@font/inkliquid"
                 android:gravity="center"

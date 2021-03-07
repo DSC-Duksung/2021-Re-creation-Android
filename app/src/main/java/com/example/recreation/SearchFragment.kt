@@ -18,7 +18,7 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        bnt_paper.setOnClickListener {
+        btn_paper.setOnClickListener {
             activity?.let {
                 val intent = Intent(activity, PaperPost::class.java)
                 startActivity(intent)
@@ -26,7 +26,7 @@ class SearchFragment : Fragment() {
             }
         }
 
-        bnt_pet.setOnClickListener {
+        btn_pet.setOnClickListener {
             activity?.let {
                 val intent = Intent(activity, PlasticPost::class.java)
                 startActivity(intent)
@@ -34,7 +34,7 @@ class SearchFragment : Fragment() {
             }
         }
 
-        bnt_can.setOnClickListener {
+        btn_can.setOnClickListener {
             activity?.let {
                 val intent = Intent(activity, CanPost::class.java)
                 startActivity(intent)
@@ -42,7 +42,7 @@ class SearchFragment : Fragment() {
             }
         }
 
-        bnt_glass.setOnClickListener {
+        btn_glass.setOnClickListener {
             activity?.let {
                 val intent = Intent(activity, GlassPost::class.java)
                 startActivity(intent)
@@ -50,7 +50,7 @@ class SearchFragment : Fragment() {
             }
         }
 
-        bnt_vinyl.setOnClickListener {
+        btn_vinyl.setOnClickListener {
             activity?.let {
                 val intent = Intent(activity, VinylPost::class.java)
                 startActivity(intent)
@@ -58,7 +58,7 @@ class SearchFragment : Fragment() {
             }
         }
 
-        bnt_styro.setOnClickListener {
+        btn_styro.setOnClickListener {
             activity?.let {
                 val intent = Intent(activity, StyrofoamPost::class.java)
                 startActivity(intent)
