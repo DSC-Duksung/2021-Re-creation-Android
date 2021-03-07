@@ -20,7 +20,47 @@ class SearchFragment : Fragment() {
 
         bnt_paper.setOnClickListener {
             activity?.let {
-                val intent = Intent(activity, Post::class.java)
+                val intent = Intent(activity, PaperPost::class.java)
+                startActivity(intent)
+
+            }
+        }
+
+        bnt_pet.setOnClickListener {
+            activity?.let {
+                val intent = Intent(activity, PlasticPost::class.java)
+                startActivity(intent)
+
+            }
+        }
+
+        bnt_can.setOnClickListener {
+            activity?.let {
+                val intent = Intent(activity, CanPost::class.java)
+                startActivity(intent)
+
+            }
+        }
+
+        bnt_glass.setOnClickListener {
+            activity?.let {
+                val intent = Intent(activity, GlassPost::class.java)
+                startActivity(intent)
+
+            }
+        }
+
+        bnt_vinyl.setOnClickListener {
+            activity?.let {
+                val intent = Intent(activity, VinylPost::class.java)
+                startActivity(intent)
+
+            }
+        }
+
+        bnt_styro.setOnClickListener {
+            activity?.let {
+                val intent = Intent(activity, StyrofoamPost::class.java)
                 startActivity(intent)
 
             }
