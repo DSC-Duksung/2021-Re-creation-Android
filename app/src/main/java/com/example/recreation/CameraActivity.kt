@@ -6,7 +6,6 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.recreation.model.ImageClassifier
@@ -19,6 +18,7 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import io.reactivex.rxjava3.kotlin.subscribeBy
 import kotlinx.android.synthetic.main.activity_camera.*
 
+
 class CameraActivity:AppCompatActivity() {
 
     private val CHOOSE_IMAGE = 1001
@@ -29,42 +29,23 @@ class CameraActivity:AppCompatActivity() {
         val MY_CAMERA_REQUEST_CODE = 7171
     }
     var imageUri: Uri? = null
-    var count:Int? = 0
+    // var stringUri:String? = null
+    var modelClass:String? = null
+    //  var count:Int? = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
 
-        back_button.visibility = View.INVISIBLE
-
-        btn_back.setOnClickListener {
-            finish()
-        }
 
         next_button.setOnClickListener {
-            back_button.visibility = View.VISIBLE
 
-            count = count?.plus(1)
-            when (count) {
-                1 -> qnaText.text = "1번: print 1"
-                2 -> qnaText.text = "2번: print 2"
-                3 -> qnaText.text = "3번: print 3"
-                4 -> {
-                    // 물 뿌리는 화면으로 전환
-                    val intent = Intent(this,WateringActivity::class.java)
-                    startActivity(intent)
-                }
-            }
+            val nextIntent = Intent(this, StepActivity::class.java)
+            // nextIntent.putExtra("stringUri",stringUri)
+            nextIntent.putExtra("modelClass",modelClass)
+            startActivity(nextIntent)
         }
 
-        back_button.setOnClickListener {
-            count = count?.minus(1)
-            when(count){
-                2 -> qnaText.text = "2번 : print 2"
-                3 -> qnaText.text = "3번 : print 3"
-                else -> qnaText.text = "1번 : print 1"
-            }
-        }
 
         //Event
         Dexter.withContext(this)
@@ -104,7 +85,8 @@ class CameraActivity:AppCompatActivity() {
                 }
             }).check()
 
-        classifier = ImageClassifier(getAssets()) // sy: assets의 tflite 연결
+        classifier = ImageClassifier(getAssets())
+        //sy: assets의 tflite 연결
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -112,20 +94,23 @@ class CameraActivity:AppCompatActivity() {
         if(requestCode == MY_CAMERA_REQUEST_CODE){
             if(resultCode == RESULT_OK){
                 try{
-                    bitmap = MediaStore.Images.Media.getBitmap(contentResolver,imageUri!!)
+                    bitmap = MediaStore.Images.Media.getBitmap(contentResolver, imageUri!!)
                     bitmap = Bitmap.createScaledBitmap(bitmap, Keys.INPUT_SIZE, Keys.INPUT_SIZE, false)
+                    //stringUri = imageUri.toString()
                     img_preview1.setImageBitmap(bitmap)
+
 
                     // classifier 결과
                     classifier.recognizeImage(bitmap).subscribeBy(
                         onSuccess = {
                             var string: String = it.toString()
                             resultText.text = string.split(",")[0].replace("[", "").trim()
+                            modelClass = string.split(",")[0].replace("[", "").trim()
                         }, onError = {
                             resultText.text = "Error"
                         }
                     )
-                } catch (e:Exception){
+                } catch (e: Exception){
                     e.printStackTrace()
                 }
             }
