@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
     
     <Button
-        android:id="@+id/bnt_paper"
+        android:id="@+id/btn_paper"
         android:layout_width="205dp"
         android:layout_height="180dp"
         android:background="#00FF0000"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/bnt_pet"
+        android:id="@+id/btn_pet"
         android:layout_width="205dp"
         android:layout_height="180dp"
         android:background="#00FF0000"
@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/bnt_vinyl"
+        android:id="@+id/btn_vinyl"
         android:layout_width="205dp"
         android:layout_height="180dp"
         android:background="#00FF0000"
@@ -45,14 +45,14 @@
         android:paddingTop="30dp"
         android:text="Vinyl"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bnt_paper"
+        app:layout_constraintTop_toBottomOf="@+id/btn_paper"
         android:textColor="#3C3C3C"
         android:textSize="20sp"
         android:textStyle="bold"
         android:fontFamily="@font/tmoney_regular" />
 
     <Button
-        android:id="@+id/bnt_can"
+        android:id="@+id/btn_can"
         android:layout_width="205dp"
         android:layout_height="180dp"
         android:background="#00FF0000"
@@ -64,10 +64,10 @@
         android:textStyle="bold"
         android:fontFamily="@font/tmoney_regular"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bnt_vinyl" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_vinyl" />
 
     <Button
-        android:id="@+id/bnt_styro"
+        android:id="@+id/btn_styro"
         android:layout_width="205dp"
         android:layout_height="180dp"
         android:background="#00FF0000"
@@ -79,10 +79,10 @@
         android:textStyle="bold"
         android:fontFamily="@font/tmoney_regular"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bnt_glass" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_glass" />
 
     <Button
-        android:id="@+id/bnt_glass"
+        android:id="@+id/btn_glass"
         android:layout_width="205dp"
         android:layout_height="180dp"
         android:background="#00FF0000"
@@ -94,6 +94,6 @@
         android:textStyle="bold"
         android:fontFamily="@font/tmoney_regular"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bnt_pet" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_pet" />
     
 </androidx.constraintlayout.widget.ConstraintLayout>
