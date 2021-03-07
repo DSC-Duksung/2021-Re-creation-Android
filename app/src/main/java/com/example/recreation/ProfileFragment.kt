@@ -50,9 +50,9 @@ class ProfileFragment : Fragment(), View.OnClickListener {
         super.onStart()
         val currentUser = firebaseAuth.currentUser
         if ( currentUser != null ) { // 로그인 했다면
-            nickname.setText(currentUser.email.split("@")[0])
+            nickname.setText(currentUser.displayName)
             email.setText(currentUser.email)
-            context?.let { Glide.with(it).load(currentUser.photoUrl).into(profileImage) }
+            context?.let { Glide.with(it).load(currentUser.photoUrl).override(73,73).into(profileImage) }
             login_button.setText("LOGOUT")
         }
     }
@@ -100,9 +100,9 @@ class ProfileFragment : Fragment(), View.OnClickListener {
                 if (task.isSuccessful) {
                     Log.d("LoginActivity", "firebaseAuthWithGoogle 성공")
                     val user = firebaseAuth.currentUser
-                    nickname.setText(user.email.split("@")[0])
+                    nickname.setText(user.displayName)
                     email.text = user.email
-                    context?.let { Glide.with(it).load(user.photoUrl).into(profileImage) }
+                    context?.let { Glide.with(it).load(user.photoUrl).override(73,73).into(profileImage) }
                     login_button.text = "LOGOUT"
                 } else {
                     Log.w("LoginActivity", "firebaseAuthWithGoogle 실패", task.exception)
