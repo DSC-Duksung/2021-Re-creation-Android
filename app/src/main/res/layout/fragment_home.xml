@@ -45,6 +45,7 @@
         android:id="@+id/shortText"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:fontFamily="@font/inkliquid"
         android:text="Have a good day!"
         android:textSize="25sp"
         android:textColor="@color/black"
