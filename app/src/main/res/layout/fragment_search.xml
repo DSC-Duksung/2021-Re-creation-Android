@@ -4,7 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-81dp"
+        tools:layout_editor_absoluteY="16dp">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
     <Button
         android:id="@+id/bnt_paper"
         android:layout_width="205dp"
@@ -13,10 +23,11 @@
         android:drawableTop="@drawable/ic_paper"
         android:onClick="paperClicked"
         android:paddingTop="30dp"
-        android:text="종이류"
+        android:text="Paper"
         android:textColor="#3C3C3C"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:fontFamily="@font/tmoney_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,10 +38,11 @@
         android:background="#00FF0000"
         android:drawableTop="@drawable/ic_plastic"
         android:paddingTop="30dp"
-        android:text="페트병"
+        android:text="Plastic"
         android:textColor="#3C3C3C"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:fontFamily="@font/tmoney_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,12 +53,13 @@
         android:background="#00FF0000"
         android:drawableTop="@drawable/ic_vinyl"
         android:paddingTop="30dp"
-        android:text="비닐"
+        android:text="Vinyl"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bnt_paper"
         android:textColor="#3C3C3C"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:fontFamily="@font/tmoney_regular" />
 
     <Button
         android:id="@+id/bnt_can"
@@ -55,10 +68,11 @@
         android:background="#00FF0000"
         android:drawableTop="@drawable/ic_can"
         android:paddingTop="30dp"
-        android:text="캔"
+        android:text="Can"
         android:textColor="#3C3C3C"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:fontFamily="@font/tmoney_regular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bnt_vinyl" />
 
@@ -69,10 +83,11 @@
         android:background="#00FF0000"
         android:drawableTop="@drawable/ic_styrofoam"
         android:paddingTop="30dp"
-        android:text="스티로폼"
+        android:text="Styrofoam"
         android:textColor="#3C3C3C"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:fontFamily="@font/tmoney_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bnt_glass" />
 
@@ -83,11 +98,13 @@
         android:background="#00FF0000"
         android:drawableTop="@drawable/ic_glass"
         android:paddingTop="30dp"
-        android:text="유리병"
+        android:text="Glass"
         android:textColor="#3C3C3C"
         android:textSize="20sp"
         android:textStyle="bold"
+        android:fontFamily="@font/tmoney_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bnt_pet" />
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
