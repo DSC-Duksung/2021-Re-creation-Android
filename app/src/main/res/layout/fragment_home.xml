@@ -19,10 +19,10 @@
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         tools:ignore="MissingConstraints" />
     <TextView
-        android:id="@+id/nickname"
+        android:id="@+id/displayName"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="Nickname"
+        android:text="displayName"
         android:textSize="15sp"
         android:textColor="@color/black"
         android:layout_marginBottom="15dp"
