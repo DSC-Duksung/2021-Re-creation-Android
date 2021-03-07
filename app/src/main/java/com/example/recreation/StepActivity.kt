@@ -1,27 +1,9 @@
 package com.example.recreation
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.res.Resources
-import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
-import android.provider.MediaStore.Images
-import android.view.View
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
-import com.example.recreation.model.ImageClassifier
-import com.example.recreation.model.Keys
-import com.google.rpc.context.AttributeContext
-import io.reactivex.rxjava3.kotlin.subscribeBy
-import kotlinx.android.synthetic.main.activity_camera.*
-import java.io.FileNotFoundException
-import java.io.IOException
-
+import kotlinx.android.synthetic.main.activity_step.*
 
 class StepActivity:AppCompatActivity() {
 
@@ -46,7 +28,7 @@ class StepActivity:AppCompatActivity() {
     var modelClass:String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_camera)
+        setContentView(R.layout.activity_step)
 
         val bundle: Bundle? = intent.extras
         modelClass = intent.getStringExtra("modelClass").toString()
@@ -91,12 +73,12 @@ class StepActivity:AppCompatActivity() {
     fun function1(a:Int){
         when (modelClass) {
             "paper" -> {
-                qnaText.text = glassStep[a]
-                img_preview1.setImageResource(glassImage[a])
+                qnaText.text = paperStep[a]
+                img_preview1.setImageResource(paperImage[a])
             }
             "glass" -> {
-                    qnaText.text = paperStep[a]
-                    img_preview1.setImageResource(paperImage[a])
+                    qnaText.text = glassStep[a]
+                    img_preview1.setImageResource(glassImage[a])
             }
             "pet" -> {
                 qnaText.text = petStep[a]

@@ -17,6 +17,11 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import io.reactivex.rxjava3.kotlin.subscribeBy
 import kotlinx.android.synthetic.main.activity_camera.*
+import kotlinx.android.synthetic.main.activity_camera.btn_back
+import kotlinx.android.synthetic.main.activity_camera.img_preview1
+import kotlinx.android.synthetic.main.activity_camera.next_button
+import kotlinx.android.synthetic.main.activity_camera.resultText
+import kotlinx.android.synthetic.main.activity_photo.*
 
 
 class CameraActivity:AppCompatActivity() {
@@ -37,6 +42,9 @@ class CameraActivity:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_camera)
 
+        btn_back.setOnClickListener {
+            finish()
+        }
 
         next_button.setOnClickListener {
 

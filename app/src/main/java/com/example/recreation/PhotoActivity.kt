@@ -5,18 +5,12 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.recreation.model.ImageClassifier
 import com.example.recreation.model.Keys
 import io.reactivex.rxjava3.kotlin.subscribeBy
-import kotlinx.android.synthetic.main.activity_camera.*
-import kotlinx.android.synthetic.main.activity_camera.back_button
-import kotlinx.android.synthetic.main.activity_camera.btn_back
-import kotlinx.android.synthetic.main.activity_camera.img_preview1
-import kotlinx.android.synthetic.main.activity_camera.qnaText
-import kotlinx.android.synthetic.main.activity_camera.resultText
+import kotlinx.android.synthetic.main.activity_photo.*
 
 class PhotoActivity:AppCompatActivity() {
 
@@ -34,6 +28,10 @@ class PhotoActivity:AppCompatActivity() {
         setContentView(R.layout.activity_photo)
 
         loadImage()
+
+        btn_back.setOnClickListener {
+            finish()
+        }
 
         next_button.setOnClickListener {
             val nextIntent = Intent(this, StepActivity::class.java)
