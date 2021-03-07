@@ -30,9 +30,9 @@
 
             <TextView
                 android:layout_height="wrap_content"
-                android:layout_width="362dp"
+                android:layout_width="wrap_content"
                 android:gravity="center"
-                android:layout_marginLeft="24dp"
+                android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/inkliquid"
                 android:text="Paper"
                 android:textColor="@color/black"
@@ -48,9 +48,9 @@
                 android:src="@drawable/paper2" />
 
             <TextView
-                android:layout_width="362dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
+                android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/inkliquid"
                 android:gravity="center"
                 android:text="Remove other material\nthat is different from papers\nsuch as tapes and springs."
@@ -66,9 +66,9 @@
                 android:src="@drawable/paper3" />
 
             <TextView
-                android:layout_width="362dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="24dp"
+                android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:fontFamily="@font/inkliquid"
                 android:text="Remove foreign substances\nfrom the inside of\npaper packs and paper cups."
@@ -83,10 +83,9 @@
                 android:src="@drawable/paper4" />
 
             <TextView
-                android:layout_width="364dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="22dp"
-                android:layout_marginLeft="22dp"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="100dp"
                 android:fontFamily="@font/inkliquid"
                 android:gravity="center"
