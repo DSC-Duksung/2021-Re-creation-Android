@@ -17,12 +17,6 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import io.reactivex.rxjava3.kotlin.subscribeBy
 import kotlinx.android.synthetic.main.activity_camera.*
-import kotlinx.android.synthetic.main.activity_camera.btn_back
-import kotlinx.android.synthetic.main.activity_camera.img_preview1
-import kotlinx.android.synthetic.main.activity_camera.next_button
-import kotlinx.android.synthetic.main.activity_camera.resultText
-import kotlinx.android.synthetic.main.activity_photo.*
-
 
 class CameraActivity:AppCompatActivity() {
 
@@ -112,10 +106,10 @@ class CameraActivity:AppCompatActivity() {
                     classifier.recognizeImage(bitmap).subscribeBy(
                         onSuccess = {
                             var string: String = it.toString()
-                            resultText.text = string.split(",")[0].replace("[", "").trim()
+                            qnaText.text = string.split(",")[0].replace("[", "").trim()
                             modelClass = string.split(",")[0].replace("[", "").trim()
                         }, onError = {
-                            resultText.text = "Error"
+                            qnaText.text = "Error"
                         }
                     )
                 } catch (e: Exception){

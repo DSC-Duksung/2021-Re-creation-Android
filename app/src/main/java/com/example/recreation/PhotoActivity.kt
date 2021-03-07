@@ -63,9 +63,9 @@ class PhotoActivity:AppCompatActivity() {
             classifier.recognizeImage(bitmap).subscribeBy(
                 onSuccess = {
                     var string: String = it.toString()
-                    resultText.text = string.split(",")[0].replace("[", "").trim()
+                    qnaText.text = string.split(",")[0].replace("[", "").trim()
                     modelClass = string.split(",")[0].replace("[", "").trim() }, onError = {
-                    resultText.text = "Error"
+                    qnaText.text = "Error"
                 }
             )
         }

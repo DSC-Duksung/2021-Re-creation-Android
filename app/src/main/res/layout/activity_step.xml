@@ -19,8 +19,7 @@
         android:id="@+id/img_preview1"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_below="@+id/btn_back"
-        android:layout_marginTop="28dp" />
+        android:layout_below="@+id/btn_back" />
     <TextView
         android:id="@+id/resultText"
         android:layout_width="wrap_content"
@@ -28,8 +27,11 @@
         android:layout_below="@+id/img_preview1"
         android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:text="결과"
-        android:textSize="30dp" />
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:text="how to separate collection"
+        android:textSize="25dp" />
 
     <TextView
         android:id="@+id/qnaText"
